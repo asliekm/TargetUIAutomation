@@ -1,4 +1,4 @@
-package com.automationExercise.page;
+package com.automationExercise.pages;
 
 import com.automationExercise.utilities.ConfigurationReader;
 import com.automationExercise.utilities.Driver;
