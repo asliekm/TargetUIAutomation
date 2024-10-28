@@ -11,7 +11,7 @@ public class StepDef {
 
     @Given("the user is on the Otto homepage")
     public void the_user_is_on_the_Otto_homepage() {
-        driver.get("https://www.otto.de/"); // Navigate to the Otto homepage
+       // driver.get("https://www.otto.de/"); // Navigate to the Otto homepage
     }
 
 }
