@@ -75,7 +75,8 @@ public class Driver {
             return new RemoteWebDriver(url, (Capabilities) options);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("Failed to initialize remote WebDriver", e);
+            throw new RuntimeException("Failed to initialize remote WebDriver for browser: " + options.toString(), e);
+
         }
     }
 
