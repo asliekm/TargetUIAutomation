@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = "com.automationExercise.steps", // Package with your step definitions
         plugin = {"pretty", "html:target/cucumber-reports.html"}, // Reporting options
         monochrome = true ,// Enables readable output in console
-        tags= "@login"
+        tags= "@loginTarget"
 )
 public class CukesRunner {
     // This class will remain empty. It is used as a glue between Cucumber and JUnit.

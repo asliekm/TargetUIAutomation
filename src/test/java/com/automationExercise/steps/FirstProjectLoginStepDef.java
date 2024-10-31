@@ -2,14 +2,13 @@ package com.automationExercise.steps;
 
 import com.automationExercise.page.BasePage;
 import com.automationExercise.page.LoginPage;
-import com.automationExercise.utilities.BrowserUtils;
 import com.automationExercise.utilities.ConfigurationReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LoginStepDef extends BasePage {
+public class FirstProjectLoginStepDef extends BasePage {
 
  LoginPage loginpage = new LoginPage();
     @Given("thw user able to click login button")

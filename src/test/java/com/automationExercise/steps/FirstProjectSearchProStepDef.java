@@ -6,7 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
-public class SearchProStepDef {
+public class FirstProjectSearchProStepDef {
     ProductPage product= new ProductPage();
 
     @Then("the user should be able to enter the {string} in the search box and click the search button")

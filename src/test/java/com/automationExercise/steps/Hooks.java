@@ -15,30 +15,24 @@ import java.time.Duration;
 public class Hooks {
 
     @Before
-    public void setupMethod(){
+    public void setupMethod() {
         System.out.println("--------- Before Method is Executed ---------");
 
-        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        Driver.getDriver().get( ConfigurationReader.getProperty("BaseUrl"));
 
-
-        Driver.getDriver().get(ConfigurationReader.getProperty("practice_url"));
+        //Driver.getDriver().get(ConfigurationReader.getProperty("practice_url"));
     }
 
 
     @After
-    public void teardownMethod(Scenario scenario){
-
+    public void teardownMethod(Scenario scenario) {
         if (scenario.isFailed()) {
-
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName());
-
         }
-
-        BrowserUtils.sleep(2);
-      //  Driver.closeDriver();
+        Driver.closeDriver(); // WebDriver oturumunu kapatır ve temizler
         System.out.println("--------- After Method is Executed ---------");
-
     }
+
 
 }
