@@ -14,36 +14,10 @@ public abstract class BasePage {
     }
 
 
-    @FindBy(xpath = "//ul[@class='nav navbar-nav']//li[1]")
-    private WebElement homePage;
+    @FindBy(xpath = "//*[@class='sc-58ad44c0-3 kwbrXj h-margin-r-x3']")
+    public WebElement homePageSigninButton;
 
-    @FindBy(xpath = "//ul[@class='nav navbar-nav']//li[2]")
-    public WebElement productPage;
 
-    @FindBy(xpath = "//ul[@class='nav navbar-nav']//li[3]")
-    private WebElement cart;
-
-    @FindBy(xpath = "//ul[@class='nav navbar-nav']//li[4]")
-    public WebElement loginButton;
-
-    @FindBy(xpath = "//ul[@class='nav navbar-nav']//li[5]")
-    public WebElement testcase;
-
-    @FindBy(xpath = "//ul[@class='nav navbar-nav']//li[6]")
-    public WebElement apitesting;
-
-    @FindBy(xpath = "//ul[@class='nav navbar-nav']//li[7]")
-    public WebElement videoTutorials;
-    @FindBy(xpath = "//ul[@class='nav navbar-nav']//li[8]")
-    public WebElement contactUs;
-    @FindBy(xpath = "//div[@class='single-widget']//h2")
-    public WebElement subscription;
-
-    @FindBy(xpath = "//a[@id='scrollUp']")
-    public WebElement scrollUp;
-
-    @FindBy(xpath = "//p[.='Consent']")
-    public WebElement Confirm;// error
 
 
     public void clickLink(String text) {
@@ -68,7 +42,7 @@ public abstract class BasePage {
 
         //usernameEl.sendKeys(username);
         //passwordEl.sendKeys(password);
-        loginButton.click();
+        homePageSigninButton.click();
 
 
 
