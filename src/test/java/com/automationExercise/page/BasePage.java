@@ -8,17 +8,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
+    @FindBy(xpath = "//*[@class='sc-58ad44c0-3 kwbrXj h-margin-r-x3']")
+    public WebElement homePageSigninButton;
+
+    @FindBy(xpath = "//*[@class='sc-e851bd29-0 sc-7d77c0d1-0 dmfVmE cRBlGM']")
+    public WebElement homePageTargetIcon;
+
     public BasePage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
-
-    @FindBy(xpath = "//*[@class='sc-58ad44c0-3 kwbrXj h-margin-r-x3']")
-    public WebElement homePageSigninButton;
-
-
-
 
     public void clickLink(String text) {
 
@@ -39,11 +38,9 @@ public abstract class BasePage {
         String password = ConfigurationReader.getProperty("password");
 
 
-
         //usernameEl.sendKeys(username);
         //passwordEl.sendKeys(password);
         homePageSigninButton.click();
-
 
 
     }
