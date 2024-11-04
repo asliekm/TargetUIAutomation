@@ -21,6 +21,7 @@ public abstract class BasePage {
     public WebElement homePageTargetIcon;
 
 
+
     public void clickLink(String text) {
 
         Driver.getDriver().findElement(By.linkText(text)).click();
@@ -43,6 +44,7 @@ public abstract class BasePage {
         //usernameEl.sendKeys(username);
         //passwordEl.sendKeys(password);
         homePageSigninButton.click();
+
 
     }
 
