@@ -8,17 +8,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
-    public BasePage() {
-
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
-
-
     @FindBy(xpath = "//*[@class='sc-58ad44c0-3 kwbrXj h-margin-r-x3']")
     public WebElement homePageSigninButton;
 
 
+    public BasePage() {
 
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
     public void clickLink(String text) {
 
@@ -39,11 +36,9 @@ public abstract class BasePage {
         String password = ConfigurationReader.getProperty("password");
 
 
-
         //usernameEl.sendKeys(username);
         //passwordEl.sendKeys(password);
         homePageSigninButton.click();
-
 
 
     }
