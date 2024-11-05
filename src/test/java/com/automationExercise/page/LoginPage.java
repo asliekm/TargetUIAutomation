@@ -16,19 +16,10 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
-   // @FindBy(xpath = "(//input[@name='searchTerm'])[1]")
-   // public WebElement homePageSearchbox;
-
-  //  @FindBy(xpath = "//*[@class='h-margin-r-x1']")
-   // public List<WebElement> bulunanUrunElementleriList;
-
-
     @FindBy(xpath = "//*[@class='sc-58ad44c0-3 kwbrXj h-margin-r-x3']")
     public WebElement homePageSigninButton;
 
     // //*[@class='sc-58ad44c0-3 kwbrXj h-margin-r-x3']
-
 
     @FindBy(xpath = "//*[@class='sc-859e7637-0 hHZPQy']")
     public WebElement barSignInButton;
@@ -42,7 +33,6 @@ public class LoginPage {
     @FindBy(xpath = "//*[@*='sc-ddc722c0-0 sc-f1230b39-0 sc-ea08e237-4 bsiKgd doBYzz bveVWO']")
     public WebElement signInWithPasswordButton;
 
-
     @FindBy(xpath = "(//*[@class='sc-859e7637-0 hHZPQy'])[1]")
     public WebElement myTargetButtonInBar;
 
@@ -55,24 +45,11 @@ public class LoginPage {
     @FindBy(id = "password--ErrorMessage")
     public WebElement errorMessagePleaseEnteraValidPassword;
 
-
-
     @FindBy(xpath = "//span[text()='Verification code sent']")
     public WebElement verificationCodeSentScript;
-
-    @FindBy(xpath = "(//*[@*='sc-859e7637-0 hHZPQy'])[2]")
-    public WebElement createAccountButton;
-
-
-   @FindBy(xpath = "//*[@*='sc-f86dede5-4 gseCQf h-bg-grayLightest']")
-   public WebElement birthdaySaleScript;
 
 
    @FindBy(xpath = "(//*[@class='sc-e851bd29-0 sc-859e7637-1 kMNBhI kVBpoo'])[15]")
    public  WebElement signOutButton;
-
-
-
-
 
 }

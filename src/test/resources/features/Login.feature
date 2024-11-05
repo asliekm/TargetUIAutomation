@@ -1,5 +1,5 @@
 @wip  @login
-Feature: Users should be able to login
+Feature: User Login on Target.com
 
   Background: User is already in the home page
     Given the user goes to Sign In Page
