@@ -1,4 +1,4 @@
-﻿# AutomationExerciseUI
+﻿# TargetUIAutomation
 
 This project contains automated tests for verifying the elements on the NinjaOne login page using Java, Maven, TestNG, and Cucumber.
 
