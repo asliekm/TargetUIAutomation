@@ -23,7 +23,6 @@ public class LoginStepDef extends BasePage {
 
     }
 
-
     @Given("the user enters {string}")
     public void theUserEnters(String aValidUsername) {
 
@@ -116,12 +115,5 @@ public class LoginStepDef extends BasePage {
         loginPage.passwordField.sendKeys(ConfigurationReader.getProperty("emptyPassword"));
 
     }
-
-
-
-    // @And("the user is able to see {string} option")
-    // public void the_user_is_able_to_see_option(String string) {
-    //   Assert.assertTrue(loginPage.signOutButton.isDisplayed());}
-
 
 }
