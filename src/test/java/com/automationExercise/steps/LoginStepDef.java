@@ -23,6 +23,8 @@ public class LoginStepDef extends BasePage {
 
     }
 
+
+
     @Given("the user enters {string}")
     public void theUserEnters(String aValidUsername) {
 
@@ -115,5 +117,7 @@ public class LoginStepDef extends BasePage {
         loginPage.passwordField.sendKeys(ConfigurationReader.getProperty("emptyPassword"));
 
     }
+
+
 
 }
