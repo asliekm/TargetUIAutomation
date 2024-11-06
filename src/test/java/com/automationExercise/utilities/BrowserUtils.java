@@ -1,12 +1,10 @@
 package com.automationExercise.utilities;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -16,7 +14,12 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Slf4j
 public class BrowserUtils {
+    public static final WebDriver driver = Driver.getDriver();
+    // Define a default wait time and polling interval
+    private static final long DEFAULT_WAIT_DURATION = 5000; // 5 seconds
+    private static final long DEFAULT_POLLING_INTERVAL = 1000; // 1 second
 
     /**
      * Pauses execution for the specified number of seconds
@@ -31,6 +34,13 @@ public class BrowserUtils {
             e.printStackTrace();
         }
     }
+
+    public static final Wait<WebDriver> wait = new FluentWait<>(driver)
+            .withTimeout(Duration.ofMillis(DEFAULT_WAIT_DURATION))
+            .pollingEvery(Duration.ofMillis(DEFAULT_POLLING_INTERVAL))
+            .ignoring(NoSuchElementException.class);
+
+
 
     /**
      * Switches to a window that contains the expected URL, and verifies the title
@@ -115,6 +125,8 @@ public class BrowserUtils {
             }
         }
     }
+
+
 
     /**
      * Clicks on an element using JavaScript
@@ -488,6 +500,8 @@ public class BrowserUtils {
             }
         }
     }
+
+
 
 
 }
