@@ -54,8 +54,6 @@ public abstract class BasePage {
 
     }
 
-    @FindBy(css = "[data-test='@web/SearchInputMobile']")
-    public WebElement searchInputBox;
 
     @FindBy( css =".h-margin-r-x1" )
     public  WebElement searchResultWithNumber;
