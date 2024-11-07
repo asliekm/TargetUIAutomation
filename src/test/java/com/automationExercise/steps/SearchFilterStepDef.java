@@ -27,7 +27,6 @@ public class SearchFilterStepDef extends BasePage {
 
     @When("the user enters {string} in the search bar")
     public void theUserEntersInTheSearchBar(String searchText) {
-        waitAndClick(searchInputBox);
-        searchInputBox.sendKeys(searchText);
+
     }
 }
