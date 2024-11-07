@@ -17,48 +17,15 @@ import java.time.Duration;
 
 @Slf4j
 public abstract class BasePage {
-    public static final WebDriver driver = Driver.getDriver();
-    // Define a default wait time and polling interval
-    private static final long DEFAULT_WAIT_DURATION = 5000; // 5 seconds
-    private static final long DEFAULT_POLLING_INTERVAL = 1000; // 1 second
-
-    public static final Wait<WebDriver> wait = new FluentWait<>(driver)
-            .withTimeout(Duration.ofMillis(DEFAULT_WAIT_DURATION))
-            .pollingEvery(Duration.ofMillis(DEFAULT_POLLING_INTERVAL))
-            .ignoring(NoSuchElementException.class);
-
     @FindBy(xpath = "//*[@class='sc-58ad44c0-3 kwbrXj h-margin-r-x3']")
     public WebElement homePageSigninButton;
 
     @FindBy(xpath = "//*[@class='sc-e851bd29-0 sc-7d77c0d1-0 dmfVmE cRBlGM']")
     public WebElement homePageTargetIcon;
 
-    @FindBy(css = ".h-margin-r-x1")
-    public WebElement searchResultWithNumber;
-
-    @FindBy(css = ".h-margin-r-x2")
-    public WebElement searchResultWithName;
-
-    @FindBy(css = "@web/SearchInputMobile")
-    public WebElement searchSign;
-
     public BasePage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
-    }
-
-    /**
-     * Pauses execution for the specified number of seconds
-     *
-     * @param seconds
-     */
-    public static void sleep(int seconds) {
-        seconds *= 1000;
-        try {
-            Thread.sleep(seconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     public void clickLink(String text) {
@@ -87,11 +54,45 @@ public abstract class BasePage {
 
     }
 
-    public void waitAndClick(WebElement element) {
+
+    @FindBy( css =".h-margin-r-x1" )
+    public  WebElement searchResultWithNumber;
+
+    @FindBy( css =".h-margin-r-x2" )
+    public  WebElement searchResultWithName;
+
+    public static final WebDriver driver = Driver.getDriver();
+    // Define a default wait time and polling interval
+    private static final long DEFAULT_WAIT_DURATION = 5000; // 5 seconds
+    private static final long DEFAULT_POLLING_INTERVAL = 1000; // 1 second
+
+    /**
+     * Pauses execution for the specified number of seconds
+     *
+     * @param seconds
+     */
+    public static void sleep(int seconds) {
+        seconds *= 1000;
+        try {
+            Thread.sleep(seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static final Wait<WebDriver> wait = new FluentWait<>(driver)
+            .withTimeout(Duration.ofMillis(DEFAULT_WAIT_DURATION))
+            .pollingEvery(Duration.ofMillis(DEFAULT_POLLING_INTERVAL))
+            .ignoring(NoSuchElementException.class);
+
+    public void waitAndClick(WebElement element){
         long start = System.currentTimeMillis();
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
         log.info("Clicked in {}ms", System.currentTimeMillis() - start);
     }
+
+    @FindBy(css = "@web/SearchInputMobile")
+    public WebElement searchSign;
 
 
 }
