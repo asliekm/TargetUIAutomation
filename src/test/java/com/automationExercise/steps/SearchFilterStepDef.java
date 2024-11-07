@@ -2,12 +2,14 @@ package com.automationExercise.steps;
 
 import com.automationExercise.page.BasePage;
 import com.automationExercise.page.SearchPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.WebElement;
 
 @Getter
 @Setter
@@ -17,11 +19,6 @@ public class SearchFilterStepDef extends BasePage {
 
     String resultText;
 
-    @When("clicks on the search button")
-    public void clicks_on_the_search_button() {
-        waitAndClick(searchButton);
-
-    }
 
     @Then("the search results should display more than {int} results")
     public void the_search_results_should_display_more_than_results(Integer expectedResult) {
@@ -45,5 +42,14 @@ public class SearchFilterStepDef extends BasePage {
     @When("the user enters {string} in the search bar")
     public void theUserEntersInTheSearchBar(String searchText) {
         searchBox.sendKeys(searchText);
+    }
+
+    @And("clicks on the {string} button")
+    public void clicksOnTheButton(String buttonName) {
+
+        String cssSelector = "[data-test='@web/Search/" + buttonName + "']";
+        WebElement button = getElementByCss(cssSelector);
+        button.click();
+
     }
 }

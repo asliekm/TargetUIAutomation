@@ -5,7 +5,7 @@ Feature: Display search results when entering a keyword in the search bar
 
   Scenario Outline: Displaying results when a keyword is entered in the search bar
     When the user enters "<keyword>" in the search bar
-    And clicks on the search button
+    And clicks on the "search" button
     Then the search results should display more than 0 results
     And the search results should contain the keyword "<keyword>"
 
