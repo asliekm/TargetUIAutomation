@@ -3,6 +3,7 @@ package com.automationExercise.page;
 import com.automationExercise.utilities.ConfigurationReader;
 import com.automationExercise.utilities.Driver;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ import java.time.Duration;
 
 @Slf4j
 public abstract class BasePage {
+
     @FindBy(xpath = "//*[@class='sc-58ad44c0-3 kwbrXj h-margin-r-x3']")
     public WebElement homePageSigninButton;
 
@@ -54,13 +56,6 @@ public abstract class BasePage {
 
     }
 
-
-    @FindBy( css =".h-margin-r-x1" )
-    public  WebElement searchResultWithNumber;
-
-    @FindBy( css =".h-margin-r-x2" )
-    public  WebElement searchResultWithName;
-
     public static final WebDriver driver = Driver.getDriver();
     // Define a default wait time and polling interval
     private static final long DEFAULT_WAIT_DURATION = 5000; // 5 seconds
@@ -91,8 +86,12 @@ public abstract class BasePage {
         log.info("Clicked in {}ms", System.currentTimeMillis() - start);
     }
 
-    @FindBy(css = "@web/SearchInputMobile")
-    public WebElement searchSign;
+    @FindBy(css = "[data-test='@web/Search/SearchButton']")
+    public WebElement searchButton;
+
+
+    @FindBy(id = "search")
+    public WebElement searchBox;
 
 
 }
