@@ -86,13 +86,12 @@ public abstract class BasePage {
         log.info("Clicked in {}ms", System.currentTimeMillis() - start);
     }
 
-    @FindBy(css = "[data-test='@web/Search/SearchButton']")
-    public WebElement searchButton;
-
-
     @FindBy(id = "search")
     public WebElement searchBox;
 
+    public WebElement getElementByCss(String cssSelector) {
+        return driver.findElement(By.cssSelector(cssSelector));
+    }
 
 }
 
